@@ -85,7 +85,8 @@ class Penduduk extends REST_Controller
             'alamat' => $this->post('alamat'),
             'pekerjaan' => $this->post('pekerjaan'),
             'kewarganegaraan' => $this->post('kewarganegaraan'),
-            'agama' => $this->post('agama')
+            'agama' => $this->post('agama'),
+            'date_created' => time()
         ];
 
         if ($this->penduduk->createPenduduk($data) > 0) {
@@ -118,7 +119,8 @@ class Penduduk extends REST_Controller
             'alamat' => $this->put('alamat'),
             'pekerjaan' => $this->put('pekerjaan'),
             'kewarganegaraan' => $this->put('kewarganegaraan'),
-            'agama' => $this->put('agama')
+            'agama' => $this->put('agama'),
+            'date_created' => time()
         ];
 
         if ($this->penduduk->updatePenduduk($data, $id)) {

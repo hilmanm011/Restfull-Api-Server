@@ -68,10 +68,11 @@ class Keluarga extends REST_Controller
     public function index_post()
     {
         $data = [
-            'nrp' => $this->post('nrp'),
-            'nama' => $this->post('nama'),
-            'email' => $this->post('email'),
-            'jurusan' => $this->post('jurusan')
+            'id_kk' => $this->post('id_kk'),
+            'jml_anggota' => $this->post('jml_anggota'),
+            'ibu' => $this->post('ibu'),
+            'ayah' => $this->post('ayah'),
+            'date_created' => time()
         ];
 
         if ($this->keluarga->createKeluarga($data) > 0) {
@@ -92,10 +93,11 @@ class Keluarga extends REST_Controller
 
         $id = $this->put('id');
         $data = [
-            'nrp' => $this->put('nrp'),
-            'nama' => $this->put('nama'),
-            'email' => $this->put('email'),
-            'jurusan' => $this->put('jurusan')
+            'id_kk' => $this->put('id_kk'),
+            'jml_anggota' => $this->put('jml_anggota'),
+            'ibu' => $this->put('ibu'),
+            'ayah' => $this->put('ayah'),
+            'date_created' => time()
         ];
 
         if ($this->keluarga->updateKeluarga($data, $id) > 0) {
